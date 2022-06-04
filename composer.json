@@ -1,38 +1,40 @@
 {
-    "name": "mingburnu/laravel-repository-ide-helper",
-    "description": "repository-ide-helper for laravel",
-    "type": "library",
-    "keywords": [
-        "laravel",
-        "repository",
-        "ide-helper"
-    ],
-    "homepage": "https://github.com/mingburnu/laravel-repository-ide-helper",
-    "license": "MIT",
-    "authors": [{
-        "name": "mingburnu",
-        "email": "program.developer@hotmail.com"
-    }],
-    "require": {
-        "php": ">=7.0.0",
-        "illuminate/support": "^5.7|^5.8|^6.0|^7.0|^8.0",
-        "illuminate/console": "^5.7|^5.8|^6.0|^7.0|^8.0"
-    },
-    "require-dev": {
-        "prettus/l5-repository": "^2.0",
-		"barryvdh/laravel-ide-helper": "^2.0"
-    },
-    "autoload": {
-        "files": [],
-        "psr-4": {
-            "Mingburnu\\RepositoryIdeHelper\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Mingburnu\\RepositoryIdeHelper\\RepositoryIdeHelperServiceProvider"
-            ]
-        }
+  "name": "mingburnu/laravel-repository-ide-helper",
+  "description": "repository-ide-helper for laravel",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "repository",
+    "ide-helper"
+  ],
+  "homepage": "https://github.com/mingburnu/laravel-repository-ide-helper",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "mingburnu",
+      "email": "program.developer@hotmail.com"
     }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "illuminate/support": "^5.7|^5.8|^6.0|^7.0|^8.0|^9.0",
+    "illuminate/console": "^5.7|^5.8|^6.0|^7.0|^8.0|^9.0"
+  },
+  "require-dev": {
+    "prettus/l5-repository": "^2.0",
+    "barryvdh/laravel-ide-helper": "^2.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "Mingburnu\\RepositoryIdeHelper\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mingburnu\\RepositoryIdeHelper\\RepositoryIdeHelperServiceProvider"
+      ]
+    }
+  }
 }

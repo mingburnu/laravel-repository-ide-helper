@@ -2,11 +2,9 @@
 
 namespace Mingburnu\RepositoryIdeHelper\Commands;
 
+use Exception;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Container\Container;
-use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Contracts\Container\CircularDependencyException;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Prettus\Repository\Contracts\RepositoryInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
@@ -14,17 +12,20 @@ use stdClass;
 
 class GenerateCommand extends GeneratorCommand
 {
-    protected $signature   = 'ide-helper:repository';
+    protected $signature = 'ide-helper:repository';
     protected $description = 'Generate autocompletion for repository';
-	
-	protected function getStub() {return '';}
+
+    protected function getStub(): string
+    {
+        return '';
+    }
 
     public function handle()
     {
         try {
-            $path    = base_path('_ide_helper_repositories.php');
-            
-			$br = PHP_EOL;
+            $path = base_path('_ide_helper_repositories.php');
+
+            $br = PHP_EOL;
             $content = '<?php' . $br;
             $c = Container::getInstance();
             collect($c->getBindings())->sortKeys()->each(function (array $values, $interface) use (&$content, $br, $c) {
@@ -56,20 +57,24 @@ class GenerateCommand extends GeneratorCommand
  */
 	abstract class $repository_class {}
 }$br";
+                    }
                 }
-            }
-        });
+            });
 
             $this->files->put($path, $content);
 
             $this->info('Repository ide helper created.[' . $path . ']');
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->warn($e->getMessage());
         }
     }
 
-
-    function getAncestors(string $reference, int $depth = 0): bool|string
+    /**
+     * @param string $reference
+     * @param int $depth
+     * @return false|string
+     */
+    function getAncestors(string $reference, int $depth = 0)
     {
         $parent = get_parent_class($reference);
 

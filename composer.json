@@ -17,8 +17,8 @@
   ],
   "require": {
     "php": ">=7.0.0",
-    "illuminate/support": "^5.7|^5.8|^6.0|^7.0|^8.0|^9.0",
-    "illuminate/console": "^5.7|^5.8|^6.0|^7.0|^8.0|^9.0"
+    "illuminate/support": "^5.7|^5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+    "illuminate/console": "^5.7|^5.8|^6.0|^7.0|^8.0|^9.0|^10.0"
   },
   "require-dev": {
     "prettus/l5-repository": "^2.0",
